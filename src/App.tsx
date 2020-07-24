@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import Body from './components/Body';
 
 
 function App() {
 
-  useEffect(() => {
-  }, []);
+  const [meal, setMeal] = useState<any>({});
 
   return (
-    <Header />
+    <>
+      <Header setMeal={setMeal} />
+      <Body meal={meal} />
+    </>
   );
 }
 

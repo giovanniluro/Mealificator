@@ -29,7 +29,10 @@ export const Container = styled.div`
       }
 
       &:focus + ul {
+        width: 100%;
+        display: flex;
         opacity: 1;
+        animation: showlist .4s;
       }
     }
 
@@ -38,12 +41,11 @@ export const Container = styled.div`
       position: absolute;
       top: 101%;
       background: ${Colors.background.normal};
-      width: 100%;
-      display: flex;
+      width: 60%;
       flex-direction: column;
-      opacity: 1;
+      opacity: 0;
       box-shadow: 0 4px 4px 4px rgba(0,0,0,0.3);
-      animation: showlist .4s;
+      transition: .4s;
 
       li {
         padding: 6px 10px;
@@ -56,10 +58,12 @@ export const Container = styled.div`
 
       @keyframes showlist {
         from {
-          height: 0;
+          opacity: 0;
+          transform: translateY(-40px);
         }
         to {
-          height: 100%;
+          opacity: 1;
+          transform: translateY(0);
         }
       }
     }
