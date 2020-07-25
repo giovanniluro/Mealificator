@@ -71,6 +71,7 @@ export const FoodInfo = styled.div`
 
         h1{
           margin: 10px 0;
+          text-align: center;
         }
         
         display: flex;
@@ -88,11 +89,24 @@ export const FoodInfo = styled.div`
         height: 75%;
         width: 75%;
       }
+      
+      div {
+        h1{
+          text-align: center;
+        }
+      }
+
     }
   } 
 
   @media(max-width: 400px) {      
     margin: 15px 6px;
+
+    div {
+      h1{
+        text-align: center;
+      }
+    }
   }
 `
 
