@@ -103,14 +103,21 @@ export const Container = styled.div`
 
   @media(max-width: 600px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: -5px;
 
     svg {
       display: none;
     }  
 
-    div, span, button {
+    div, button {
       margin: 5px 0;
+      width: 90%;
+    }
+
+    span {
+      margin: 10px 0;
     }
 
     > div {

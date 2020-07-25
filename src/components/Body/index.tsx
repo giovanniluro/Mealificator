@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, FoodInfo, Tag, FoodPrepare } from './style';
+import { Container, FoodInfo, Tag, FoodPrepare, Ingredients } from './style';
 
 interface BodyProps {
   meal: any;
@@ -48,9 +48,26 @@ const Body: React.FC<BodyProps> = ({ meal }) => {
               <Tag key={tag}>{tag}</Tag>
             )}
           </div>
+
+          <Ingredients>
+            <h2>Ingredients:</h2>
+            {ingredients.map(ingredient => {
+              if (ingredient.name !== '') {
+                if (ingredient.quantity !== '') {
+                  return (
+                    <p><span>{ingredient.name}:</span>{ingredient.quantity}</p>
+                  );
+                } else {
+                  return (
+                    <p><span>{ingredient.name}</span></p>
+                  );
+                }
+              }
+            })}
+          </Ingredients>
         </div>
         <FoodPrepare>
-          <p><span>How to prepare:</span></p>
+          <h2>How to prepare:</h2>
           <p>{meal.strInstructions}</p>
           <iframe title="Recipe video" allow='autoplay' src={meal.strYoutube.replace('watch?v=', 'embed/') + '?autoplay=1&modestbranding=1&rel=0'}></iframe>
         </FoodPrepare>

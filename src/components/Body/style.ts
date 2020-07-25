@@ -2,13 +2,11 @@ import styled from 'styled-components';
 import Colors from '../../config/Colors';
 
 export const Container = styled.div`
-  min-height: 90%;
 `
 
 export const FoodInfo = styled.div`
   margin: 10px;
   height: 100%;
-  margin-top: 20px;
   border-radius: 12px;
   box-shadow: 0 0 4px 4px rgba(0,0,0,0.4);
   display: flex;
@@ -17,6 +15,10 @@ export const FoodInfo = styled.div`
 
   @media(max-width: 1100px) {
     flex-direction: column;
+  }
+  
+  @media(max-width: 400px) {      
+    padding: 5px;
   }
 
   > div {
@@ -31,6 +33,7 @@ export const FoodInfo = styled.div`
     div {
       h1 {
         margin: 20px 0;
+        text-align: center;
       }
 
       span {
@@ -54,7 +57,7 @@ export const FoodInfo = styled.div`
       }
     }
 
-    @media(max-width: 650px) {
+    @media(max-width: 820px) {
       display:flex;
       flex-direction: column;
       align-items: center;
@@ -77,9 +80,23 @@ export const FoodInfo = styled.div`
         justify-content: center;
       }
     }
- 
+
+    @media(max-width: 500px) {  
+      margin: 0;
+      margin-top: 20px;
+
+      img {
+        height: 75%;
+        width: 75%;
+      }
+    }
   } 
+
+  @media(max-width: 400px) {      
+    margin: 15px 6px;
+  }
 `
+
 export const Tag = styled.p`
 
   font-size: 14px;
@@ -100,12 +117,11 @@ export const Tag = styled.p`
 export const FoodPrepare = styled.div`
   
   margin: 10px;
-  display: flex;
   border-radius: 12px;
   box-shadow: 0 0 4px 4px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px 80px;
   background: ${Colors.background.darker};
 
   iframe { 
@@ -130,10 +146,61 @@ export const FoodPrepare = styled.div`
 
   p {
     font-weight: 400;
-    
-    & + p {
-      margin-top: 20px;
-      text-align: justify;
+    margin-top: 20px;
+    text-align: justify;
+  }
+
+  @media(max-width: 400px) {      
+    padding: 2px;
+    border: 0;
+    box-shadow: none;
+
+    iframe {
+      height: 300px;
+    }
+
+    &:before {
+      content: '';
+      height: 2px;
+      width: 60%;
+      background: ${Colors.details.normal};
+      margin: 20px 0;
     }
   }
+`
+
+export const Ingredients = styled.div`
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  &:before {
+    content: '';
+    height: 2px;
+    width: 60%;
+    background: ${Colors.details.normal};
+    margin: 20px;
+  }
+
+  @media(min-width: 820px) and (max-width:1099px) {
+    margin: 0;
+
+    &:before {
+    content: '';
+    height: 260px;
+    width: 2px;
+    background: black;
+    margin: 20px;
+    position: absolute;
+    left: -40px;
+    }
+  }
+
 `
