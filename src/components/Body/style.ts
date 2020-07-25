@@ -157,10 +157,26 @@ export const FoodPrepare = styled.div`
     font-weight: bold;
   }
 
-  p {
-    font-weight: 400;
-    margin-top: 20px;
+  ul, li {
+    font-weight: bold;
     text-align: justify;
+  }
+
+  ul {
+    margin-top: 20px;
+    list-style: decimal;
+  }
+
+  li {
+    margin-top: 5px;
+    padding: 3px;
+
+    span {
+      font-weight: normal;
+    }
+    &:after {
+      content: '.';
+    }
   }
 
   @media(max-width: 550px) {      

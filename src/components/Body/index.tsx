@@ -15,6 +15,7 @@ const Body: React.FC<BodyProps> = ({ meal }) => {
 
   const [ingredients, setIngredients] = useState<Ingredients[]>([]);
   const [tags, setTags] = useState<string[]>([]);
+  const [steps, setSteps] = useState<string[]>([]);
 
 
   useEffect(() => {
@@ -31,7 +32,8 @@ const Body: React.FC<BodyProps> = ({ meal }) => {
       let tags = meal.strTags.split(',');
       setTags(tags);
     }
-
+    //setSteps([meal.strInstructions]);
+    setSteps(meal.strInstructions.split('. '));
     setIngredients(rows);
   }, [meal]);
 
@@ -68,7 +70,13 @@ const Body: React.FC<BodyProps> = ({ meal }) => {
         </div>
         <FoodPrepare>
           <h2>How to prepare:</h2>
-          <p>{meal.strInstructions}</p>
+          <ul>
+          {steps.map(step => {
+            if(step!=='' && step.length > 3) return <li><span>{step}</span></li>;
+            return;
+            }
+          )}
+          </ul>
           <iframe title="Recipe video" allow='autoplay' src={meal.strYoutube.replace('watch?v=', 'embed/') + '?autoplay=1&modestbranding=1&rel=0'}></iframe>
         </FoodPrepare>
       </ FoodInfo>
