@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/Mealificator/static/js/main.aefd5a0f.chunk.js",
-    "main.js.map": "/Mealificator/static/js/main.aefd5a0f.chunk.js.map",
+    "main.js": "/Mealificator/static/js/main.adc30d7d.chunk.js",
+    "main.js.map": "/Mealificator/static/js/main.adc30d7d.chunk.js.map",
     "runtime-main.js": "/Mealificator/static/js/runtime-main.244a82f7.js",
     "runtime-main.js.map": "/Mealificator/static/js/runtime-main.244a82f7.js.map",
     "static/js/2.e8f29f62.chunk.js": "/Mealificator/static/js/2.e8f29f62.chunk.js",
     "static/js/2.e8f29f62.chunk.js.map": "/Mealificator/static/js/2.e8f29f62.chunk.js.map",
     "index.html": "/Mealificator/index.html",
-    "precache-manifest.79afcb9d26163bf8b5271893b8e5daf1.js": "/Mealificator/precache-manifest.79afcb9d26163bf8b5271893b8e5daf1.js",
+    "precache-manifest.0966de5e14abf7204e091a0419a6a82f.js": "/Mealificator/precache-manifest.0966de5e14abf7204e091a0419a6a82f.js",
     "service-worker.js": "/Mealificator/service-worker.js",
     "static/js/2.e8f29f62.chunk.js.LICENSE.txt": "/Mealificator/static/js/2.e8f29f62.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.244a82f7.js",
     "static/js/2.e8f29f62.chunk.js",
-    "static/js/main.aefd5a0f.chunk.js"
+    "static/js/main.adc30d7d.chunk.js"
   ]
 }
