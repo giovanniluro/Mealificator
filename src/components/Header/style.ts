@@ -5,8 +5,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
-  background: ${Colors.main.normal};
+  height: 10%;
+  background: ${Colors.details.normal};
   padding: 12px;
 
   > div {
@@ -42,6 +42,8 @@ export const Container = styled.div`
       top: 101%;
       background: ${Colors.background.normal};
       width: 60%;
+      overflow: auto;
+      max-height: 500px;
       flex-direction: column;
       opacity: 0;
       box-shadow: 0 4px 4px 4px rgba(0,0,0,0.3);
@@ -74,9 +76,13 @@ export const Container = styled.div`
     color: ${Colors.background.normal};
   }
 
+  span{
+    margin: 0 50px;
+    color: ${Colors.background.normal};
+  }
+
   button {
-    margin-left: 100px;
-    background: ${Colors.details.normal};
+    background: #0B4F6C;
     color: ${Colors.background.normal};
     padding: 12px;
     border-radius: 8px;
@@ -86,12 +92,32 @@ export const Container = styled.div`
 
     &:hover {
       cursor: pointer;
-      background: ${Colors.details.lighter};
+      background: #0F6C95;
     }
 
     &:focus {
       outline: 0;
     }
 
+  }
+
+  @media(max-width: 600px) {
+    flex-direction: column;
+    margin-bottom: -5px;
+
+    svg {
+      display: none;
+    }  
+
+    div, span, button {
+      margin: 5px 0;
+    }
+
+    > div {
+      input {
+        width: 100%;
+        animation: none;
+      }
+    }
   }
 `;

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Body from './components/Body';
+import { Container } from './style';
 
 
 function App() {
@@ -8,10 +9,10 @@ function App() {
   const [meal, setMeal] = useState<any>({});
 
   return (
-    <>
+    < Container>
       <Header setMeal={setMeal} />
-      <Body meal={meal} />
-    </>
+      {meal.strMeal && <Body meal={meal} />}
+    </ Container>
   );
 }
 

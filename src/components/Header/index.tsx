@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Container } from './style';
 import { FiSearch } from 'react-icons/fi';
 import api from '../../services/api';
@@ -7,10 +7,14 @@ interface HeaderProps {
   setMeal: (meal: any) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({setMeal}) => {
+const Header: React.FC<HeaderProps> = ({ setMeal }) => {
 
   const [timer, setTimer] = useState<number>(0);
   const [foodList, setFoodList] = useState<string[]>([]);
+
+  useEffect(() => {
+    api.get('/random.php').then(meal => setMeal(meal.data.meals[0]));
+  }, []);
 
   //Choosing a random meal
   const handleRandom = useCallback(async () => {
@@ -21,8 +25,8 @@ const Header: React.FC<HeaderProps> = ({setMeal}) => {
   //Handling the choosen recipe from the list
   const handleChoose = useCallback(async (name) => {
     setFoodList([]);
-    const meal = await api.get(`/search.php?s=${name}`);   
-    setMeal(meal.data.meals[0]); 
+    const meal = await api.get(`/search.php?s=${name}`);
+    setMeal(meal.data.meals[0]);
   }, [setMeal]);
 
   //Getting the recipes with names like the user input
@@ -47,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({setMeal}) => {
   return (
     <Container>
       <div>
-        <input type="text" onChange={(e) => searchMeals(e.target.value)} onBlur={(e) => { e.target.value = ''; setTimeout(() => { setFoodList([]) }, 500) }} />
+        <input type="text" placeholder="Sarch a meal..." onChange={(e) => searchMeals(e.target.value)} onBlur={(e) => { e.target.value = ''; setTimeout(() => { setFoodList([]) }, 500) }} />
         {foodList.length > 0 &&
           <ul>
             {foodList.map(food => <li onClick={() => handleChoose(food)} key={food}>{food}</li>)}
@@ -55,6 +59,7 @@ const Header: React.FC<HeaderProps> = ({setMeal}) => {
         }
       </div>
       <FiSearch size={24} />
+      <span>OR</span>
       <button onClick={handleRandom}>
         Find me a random meal!
       </button>

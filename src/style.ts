@@ -7,14 +7,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Mulish', sans-serif;
   }
 
   body {
     background: ${Colors.background.normal};
   }
 
-  p, input, button {
-    font-size: 20px;
-  }
-
 `
+
+export const Container = styled.div`
+  min-height: 100vh;
+`;

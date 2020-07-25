@@ -7,7 +7,7 @@ export default {
   background: {
     normal: "#FEFAE0",
     lighter: "#FFFFFF",
-    darker: "#FEF9D7"
+    darker: "#FDF5C4"
   },
   text: {
     normal: "#342E37",
