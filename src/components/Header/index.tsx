@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ setMeal }) => {
 
   useEffect(() => {
     api.get('/random.php').then(meal => setMeal(meal.data.meals[0]));
-  }, []);
+  }, [setMeal]);
 
   //Choosing a random meal
   const handleRandom = useCallback(async () => {

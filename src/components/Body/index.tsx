@@ -8,6 +8,7 @@ interface BodyProps {
 interface Ingredients {
   name: string,
   quantity: string;
+  id: number;
 }
 
 const Body: React.FC<BodyProps> = ({ meal }) => {
@@ -18,13 +19,12 @@ const Body: React.FC<BodyProps> = ({ meal }) => {
 
   useEffect(() => {
     const rows = [];
-    console.log(meal.strYoutube + 'autoplay=1');
-
     for (var i = 1; i < 21; i++) {
-      if (meal[`strIngredient${i}`] === '') break;
+      if (meal[`strIngredient${i}`] === '' || meal[`strIngredient${i}`] === null ) break;
       let name = meal[`strIngredient${i}`];
       let quantity = meal[`strMeasure${i}`];
-      rows.push({ name, quantity });
+      let id = i;
+      rows.push({ id, name, quantity });
     }
 
     if (meal.strTags) {
@@ -55,11 +55,11 @@ const Body: React.FC<BodyProps> = ({ meal }) => {
               if (ingredient.name !== '') {
                 if (ingredient.quantity !== '') {
                   return (
-                    <p><span>{ingredient.name}:</span>{ingredient.quantity}</p>
+                    <p key={ingredient.id}><span>{ingredient.name}:</span>{ingredient.quantity}</p>
                   );
                 } else {
                   return (
-                    <p><span>{ingredient.name}</span></p>
+                    <p key={ingredient.id}><span>{ingredient.name}</span></p>
                   );
                 }
               }

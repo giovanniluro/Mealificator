@@ -105,7 +105,9 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
+    padding: 12px;
+    box-shadow: 4px 0 4px 4px rgba(0,0,0,0.4);
 
     svg {
       display: none;

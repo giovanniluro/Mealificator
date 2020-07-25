@@ -33,7 +33,6 @@ export const FoodInfo = styled.div`
     div {
       h1 {
         margin: 20px 0;
-        text-align: center;
       }
 
       span {
@@ -170,8 +169,6 @@ export const FoodPrepare = styled.div`
 `
 
 export const Ingredients = styled.div`
-
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
