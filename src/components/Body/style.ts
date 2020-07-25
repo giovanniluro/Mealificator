@@ -99,7 +99,7 @@ export const FoodInfo = styled.div`
     }
   } 
 
-  @media(max-width: 400px) {      
+  @media(max-width: 550px) {      
     margin: 15px 6px;
 
     div {
@@ -163,7 +163,7 @@ export const FoodPrepare = styled.div`
     text-align: justify;
   }
 
-  @media(max-width: 400px) {      
+  @media(max-width: 550px) {      
     padding: 2px;
     border: 0;
     box-shadow: none;
