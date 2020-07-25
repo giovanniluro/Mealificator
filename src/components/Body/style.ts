@@ -195,6 +195,12 @@ export const FoodPrepare = styled.div`
       background: ${Colors.details.normal};
       margin: 20px 0;
     }
+
+    ul {
+      li {
+        margin: 8px;
+      }
+    }
   }
 `
 
