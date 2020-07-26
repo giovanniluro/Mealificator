@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ setMeal }) => {
   return (
     <Container>
       <div>
-        <input type="text" placeholder="Sarch a meal..." onChange={(e) => searchMeals(e.target.value)} onBlur={(e) => { e.target.value = ''; setTimeout(() => { setFoodList([]) }, 500) }} />
+        <input type="text" placeholder="Sarch a meal..." onChange={(e) => searchMeals(e.target.value)} onBlur={(e) => { e.target.value = '';}} onFocus={() => setFoodList([])} />
         {foodList.length > 0 &&
           <ul>
             {foodList.map(food => <li onClick={() => handleChoose(food)} key={food}>{food}</li>)}
